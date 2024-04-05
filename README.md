@@ -1,6 +1,6 @@
 # Demo - gRPC Server + Web Client
 
-This project demonstrates a React Web client interacting with a gRPC server.
+This project demonstrates a React Web client interacting with a gRPC server through an app proxy.
 
 ## Architecture Overview
 
@@ -15,6 +15,7 @@ Though I haven't looked much further, it's probable that other service proxies w
 ### Built With
 
 *   [gRPC](https://grpc.io/) - A high performance, open source universal RPC framework
+*   [gRPC-Web](https://github.com/grpc/grpc-web) - A JavaScript implementation of gRPC for browser clients.
 *   [Envoy](https://www.envoyproxy.io/) - An L7 proxy and communication bus designed for large modern service oriented architectures.
 
 ## Getting Started
@@ -25,6 +26,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 *   [Docker](https://www.docker.com/) - An open platform for developing, shipping, and running applications.
 *   [NodeJS](https://nodejs.org/en) - A free, open-source, cross-platform JavaScript runtime environment.
+*   Local ports `3000`, `8080`, `9090`, and `9901` are free to use.
 
 ### Installation
 
@@ -83,7 +85,8 @@ The JavaScript client runs in the console and simply asks the user for their nam
     npm install
     ```
 
-2.  We need to compile our protobuf into a language the client understands (in this case, JavaScript). To do this, run:
+2.  We need to compile our protobuf into a language the client understands (in this case, JavaScript).
+    To do this, run:
 
     ```sh
     npm run compile:proto
@@ -92,25 +95,42 @@ The JavaScript client runs in the console and simply asks the user for their nam
     This convenient npm command invokes the `scripts/proto-gen.sh` script in the root of this project.
     It's worth taking a minute or two to familiarize yourself with what the script is doing before running it.
 
-3.  Run the client program:
+3.  Run the web client:
 
     ```sh
     npm start
     ```
 
-    Visit the web app at `localhost:3000`.
+    Visit the web app at `localhost:3000` in your favorite browser.
 
 ## Conclusion
 
 With any luck, you were able to spin up this project and witness gRPC in action!
-At this point you may be asking "When would I use this in a real project?"
+At this point you may be saying, "well that's all fine and good, but when would I use this in a real project?"
 Well, here are my thoughts on that.
+
+### When to Consider gRPC
 
 1.  You have a microservice architecture that requires a great deal of fast, efficient inter-service communication.
 2.  Your organization requires strongly typed, clear, and concise API contracts for effective cross- team/service communication.
 3.  You have many system components written in many different languages and need a protocol that is language-agnostic.
-4.  Low latency and/or high-throughput is critical for your application or use-case.
+4.  Low latency and/or high-throughput is critical for your use-case.
 5.  You want to stream data bidirectionally.
+
+### Caveats
+
+The [gRPC-Web](https://github.com/grpc/grpc-web) library is excellent for getting web-based applications communicating over gRPC, it does require additional infrastructure (namely a proxy that can translate HTTP/1.1 payloads into HTTP/2+ and back).
+While the library is in active development, it does not (yet) support all gRPC features that make it stand out from other communication methods.
+At the time of this demo's inception (April 2024), gRPC-Web lacks support for:
+
+*   Client-side and Bi-directional streaming (see [roadmap](https://github.com/grpc/grpc-web/blob/master/doc/streaming-roadmap.md))
+*   TypeScript (currently experimental)
+*   JS Promise (uses are limited)
+
+The simplicity around REST/JSON implementations may be more suitable if:
+
+1.  Your applications are purely browser-based.
+2.  Your providing public access to your APIs.
 
 ## Further Reading
 
