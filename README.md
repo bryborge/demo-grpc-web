@@ -4,7 +4,7 @@ This is a barebones demonstration of gRPC and how each component interacts.
 
 ## Architecture Overview
 
-**gRPC** is an open source Remote Procedure Call (RPC) framework developed by Google.
+**gRPC** is an open source [Remote Procedure Call (RPC)](https://en.wikipedia.org/wiki/Remote_procedure_call) framework developed by Google.
 It uses [protocol buffers](https://protobuf.dev/) (commonly referred to as "protobufs") to provide a language- and platform-neutral mechanism for serializing structured data.
 At the transport layer it uses [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113) or higher.
 
@@ -89,7 +89,8 @@ The JavaScript client runs in the console and simply asks the user for their nam
     npm run compile:proto
     ```
 
-    This convenient npm command invokes the `scripts/proto-gen.sh` script in the root of this project. It's worth taking a minute or two to familiarize yourself with what the script is doing before running it.
+    This convenient npm command invokes the `scripts/proto-gen.sh` script in the root of this project.
+    It's worth taking a minute or two to familiarize yourself with what the script is doing before running it.
 
 3.  Run the client program:
 
@@ -103,6 +104,18 @@ The JavaScript client runs in the console and simply asks the user for their nam
     What is your name? Lord Farquaad
     Hello, Lord Farquaad!
     ```
+
+## Conclusion
+
+With any luck, you were able to spin up this project and witness gRPC in action!
+At this point you may be asking "When would I use this in a real project?"
+Well, here are my thoughts on that.
+
+1.  You have a microservice architecture that requires a great deal of fast, efficient inter-service communication.
+2.  Your organization requires strongly typed, clear, and concise API contracts for effective cross- team/service communication.
+3.  You have many system components written in many different languages and need a protocol that is language-agnostic.
+4.  Low latency and/or high-throughput is critical for your application or use-case.
+5.  You want to stream data bidirectionally.
 
 ## Further Reading
 
