@@ -10,7 +10,7 @@ This project demonstrates a React Web client interacting with a gRPC server thro
 It uses [protocol buffers](https://protobuf.dev/) (commonly referred to as "protobufs") to provide a language- and platform-neutral mechanism for serializing structured data.
 At the transport layer it uses [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113) or higher.
 
-Because most server/client communications on the web rely on HTTP/1.1 (as is the case with the server and client in this demo), a proxy is necessary as a translation layer between client requests (over HTTP/1.1) and the gRPC server (HTTP/2).
+Because most server/client communications on the web rely on HTTP/1.1 (as is the case with the web client in this demo), a proxy is necessary as a translation layer between client requests (over HTTP/1.1) and the gRPC server (HTTP/2).
 Envoy serves as that proxy for this project because it provides first-class support for gRPC, HTTP/1.1, and HTTP/2 out of the box.
 Though I haven't looked much further, it's probable that other service proxies would work nicely for this purpose.
 
