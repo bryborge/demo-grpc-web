@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@types/node": "^20.12.4",
-    "grpc-tools": "^1.12.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.4"
   }

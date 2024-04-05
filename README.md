@@ -83,7 +83,15 @@ The JavaScript client runs in the console and simply asks the user for their nam
     npm install
     ```
 
-2.  Run the client program:
+2.  We need to compile our protobuf into a language the client understands (in this case, JavaScript). To do this, run:
+
+    ```sh
+    npm run compile:proto
+    ```
+
+    This convenient npm command invokes the `scripts/proto-gen.sh` script in the root of this project. It's worth taking a minute or two to familiarize yourself with what the script is doing before running it.
+
+3.  Run the client program:
 
     ```sh
     npm start
@@ -95,3 +103,11 @@ The JavaScript client runs in the console and simply asks the user for their nam
     What is your name? Lord Farquaad
     Hello, Lord Farquaad!
     ```
+
+## Further Reading
+
+*   [Protobuf Documentation](https://protobuf.dev/overview/)
+*   [Envoy Proxy Documentation](https://www.envoyproxy.io/docs/envoy/v1.29.3/)
+*   [gRPC-Web Documentation](https://grpc.io/docs/platforms/web/)
+*   [npm package: grpc-tools](https://www.npmjs.com/package/grpc-tools)
+*   [HTTP/2 Wiki](https://en.wikipedia.org/wiki/HTTP/2)
