@@ -21,7 +21,7 @@ const main = () => {
 
   server.addService(protoDescriptor.Greeter.service, { sayHello });
   server.bindAsync(SERVER_URI, grpc.ServerCredentials.createInsecure(), () => {
-    console.log(`Server running at http://${SERVER_URI}`);
+    console.log(`Server running at ${SERVER_URI}`);
   });
 };
 

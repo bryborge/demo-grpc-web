@@ -4,11 +4,11 @@ const grpc = require('@grpc/grpc-js');
 const readline = require('readline');
 
 // "Globals"
-const CLIENT_URI = '0.0.0.0:8080';
+const SERVER_URI = '0.0.0.0:9090';
 
 // Client
 const client = new greeterService.GreeterClient(
-  CLIENT_URI,
+  SERVER_URI,
   grpc.credentials.createInsecure()
 );
 
