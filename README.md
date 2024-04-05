@@ -1,5 +1,7 @@
 # Demo - gRPC Server + Web Client
 
+![A screenshot of the web application saying "Hello, World" over gRPC](_assets/screenshot.png)
+
 This project demonstrates a React Web client interacting with a gRPC server through an app proxy.
 
 ## Architecture Overview
