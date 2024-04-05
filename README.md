@@ -25,6 +25,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 *   [Docker](https://www.docker.com/) - An open platform for developing, shipping, and running applications.
 *   [NodeJS](https://nodejs.org/en) - A free, open-source, cross-platform JavaScript runtime environment.
+*   [Protoc]() -
 
 ### Installation
 
@@ -35,7 +36,7 @@ The gRPC server in this demo is written in TypeScript on NodeJS.
 1.  Install the dependencies:
 
     ```sh
-    cd server
+    cd services/server
     npm install
     ```
 
@@ -54,7 +55,7 @@ Envoy Proxy runs in a docker container and is orchestrated via [Docker Compose](
 1.  To build the image and run the container, run:
 
     ```sh
-    cd envoy
+    cd services/envoy
     docker compose up -d
     ```
 
