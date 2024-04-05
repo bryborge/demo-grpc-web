@@ -4,7 +4,7 @@ This is a barebones demonstration of gRPC and how each component interacts.
 
 ## Architecture Overview
 
-**gRPC** is an open source RPC framework developed by Google.
+**gRPC** is an open source Remote Procedure Call (RPC) framework developed by Google.
 It uses [protocol buffers](https://protobuf.dev/) (commonly referred to as "protobufs") to provide a language- and platform-neutral mechanism for serializing structured data.
 At the transport layer it uses [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113) or higher.
 
