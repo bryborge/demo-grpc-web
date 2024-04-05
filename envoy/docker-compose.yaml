@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  envoy-proxy:
+    build: .
+    container_name: envoy-proxy
+    ports:
+      - "8080:8080" # client web app port
+      - "9901:9901" # envoy web admin port
+    restart: unless-stopped
