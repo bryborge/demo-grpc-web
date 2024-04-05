@@ -12,8 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@grpc/grpc-js": "^1.10.6",
-    "google-protobuf": "^3.21.2",
-    "grpc-web": "^1.5.0"
+    "google-protobuf": "^3.21.2"
   },
   "devDependencies": {
     "grpc-tools": "^1.12.4"

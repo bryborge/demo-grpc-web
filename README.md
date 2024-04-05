@@ -121,6 +121,5 @@ Well, here are my thoughts on that.
 
 *   [Protobuf Documentation](https://protobuf.dev/overview/)
 *   [Envoy Proxy Documentation](https://www.envoyproxy.io/docs/envoy/v1.29.3/)
-*   [gRPC-Web Documentation](https://grpc.io/docs/platforms/web/)
 *   [npm package: grpc-tools](https://www.npmjs.com/package/grpc-tools)
 *   [HTTP/2 Wiki](https://en.wikipedia.org/wiki/HTTP/2)
