@@ -1,6 +1,6 @@
-# Demo - gRPC
+# Demo - gRPC Server + Web Client
 
-This is a barebones demonstration of gRPC and how each component interacts.
+This project demonstrates a React Web client interacting with a gRPC server.
 
 ## Architecture Overview
 
@@ -70,7 +70,7 @@ Envoy Proxy runs in a docker container and is orchestrated via [Docker Compose](
     localhost:9901
     ```
 
-#### Client
+#### Web Client
 
 While I would have liked to implement the client-side application in TypeScript as well, at the time of this writing, gRPC Web support for TypeScript is [experimental](https://www.npmjs.com/package/grpc-web#typescript-support), and I was not able to set it up successfully.
 
@@ -79,7 +79,7 @@ The JavaScript client runs in the console and simply asks the user for their nam
 1.  Install the dependencies:
 
     ```sh
-    cd services/client
+    cd services/web-client
     npm install
     ```
 
@@ -98,12 +98,7 @@ The JavaScript client runs in the console and simply asks the user for their nam
     npm start
     ```
 
-    The output should look something like this:
-
-    ```sh
-    What is your name? Lord Farquaad
-    Hello, Lord Farquaad!
-    ```
+    Visit the web app at `localhost:3000`.
 
 ## Conclusion
 

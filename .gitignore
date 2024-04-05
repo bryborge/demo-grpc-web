@@ -2,5 +2,4 @@
 **/node_modules
 
 # generated files
-grpc/*.js
-grpc/*.ts
+**/grpc/*.js

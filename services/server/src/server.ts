@@ -3,7 +3,7 @@ import * as protoLoader from '@grpc/proto-loader';
 import path from 'path';
 
 // "Globals"
-const PROTO_PATH = path.join(__dirname, '../../proto', 'greeting.proto');
+const PROTO_PATH = path.join(__dirname, '../../../proto', 'greeting.proto');
 const SERVER_URI = '0.0.0.0:9090';
 
 // Protobufs
