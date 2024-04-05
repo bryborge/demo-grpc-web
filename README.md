@@ -25,7 +25,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 *   [Docker](https://www.docker.com/) - An open platform for developing, shipping, and running applications.
 *   [NodeJS](https://nodejs.org/en) - A free, open-source, cross-platform JavaScript runtime environment.
-*   [Protoc]() -
 
 ### Installation
 
@@ -69,4 +68,30 @@ Envoy Proxy runs in a docker container and is orchestrated via [Docker Compose](
 
     ```sh
     localhost:9901
+    ```
+
+#### Client
+
+While I would have liked to implement the client-side application in TypeScript as well, at the time of this writing, gRPC Web support for TypeScript is [experimental](https://www.npmjs.com/package/grpc-web#typescript-support), and I was not able to set it up successfully.
+
+The JavaScript client runs in the console and simply asks the user for their name, and returns a personalized greeting using gRPC!
+
+1.  Install the dependencies:
+
+    ```sh
+    cd services/client
+    npm install
+    ```
+
+2.  Run the client program:
+
+    ```sh
+    npm start
+    ```
+
+    The output should look something like this:
+
+    ```sh
+    What is your name? Lord Farquaad
+    Hello, Lord Farquaad!
     ```

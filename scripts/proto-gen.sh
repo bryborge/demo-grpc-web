@@ -4,7 +4,7 @@ set -euo pipefail
 
 ROOT_DIR=$(git rev-parse --show-toplevel)
 PROTOC_GEN_PATH="${ROOT_DIR}/services/server/node_modules/.bin/grpc_tools_node_protoc"
-SRC_DIR="${ROOT_DIR}/services/proto"
+SRC_DIR="${ROOT_DIR}/proto"
 OUT_DIR="${ROOT_DIR}/services/client/grpc"
 
 $PROTOC_GEN_PATH \

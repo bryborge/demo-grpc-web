@@ -1,17 +1,37 @@
-const { GreeterClient } = require('../grpc/greeting_grpc_pb.js');
-const { HelloRequest } = require('../grpc/greeting_pb.js');
-
+const greeterService = require('../grpc/greeting_grpc_pb.js');
+const messages = require('../grpc/greeting_pb.js');
 const grpc = require('@grpc/grpc-js');
+const readline = require('readline');
 
-var client = new GreeterClient('localhost:8080', grpc.credentials.createInsecure());
+// "Globals"
+const CLIENT_URI = '0.0.0.0:8080';
 
-var request = new HelloRequest();
-request.setName('World');
+// Client
+const client = new greeterService.GreeterClient(
+  CLIENT_URI,
+  grpc.credentials.createInsecure()
+);
 
-client.sayHello(request, (err, response) => {
-  if (err) {
-    console.error(`Error: ${err.message}`);
-  } else {
-    console.log(`Greeting: ${response.getMessage()}`);
-  }
+// Console interface
+const iface = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Ask user for their name
+iface.question('What is your name? ', (name) => {
+  // User the user's name in the greeting
+  const request = new messages.HelloRequest();
+  request.setName(name);
+
+  // Say hello in gRPC!
+  client.sayHello(request, (err, response) => {
+    if (err) {
+      console.error(`Error: ${err.message}`);
+    } else {
+      console.log(`${response.getMessage()}!`);
+    }
+  });
+
+  iface.close();
 });
