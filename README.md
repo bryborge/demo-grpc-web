@@ -14,6 +14,9 @@ Because most server/client communications on the web rely on HTTP/1.1 (as is the
 Envoy serves as that proxy for this project because it provides first-class support for gRPC, HTTP/1.1, and HTTP/2 out of the box.
 Though I haven't looked much further, it's probable that other service proxies would work nicely for this purpose.
 
+It's worth noting that, because protobufs support a variety of languages, the server and client could have been written in [nearly anything](https://protobuf.dev/getting-started/).
+The choice to build the server in TypeScript and the web client in JavaScript was fairly arbitrary.
+
 ### Built With
 
 *   [gRPC](https://grpc.io/) - A high performance, open source universal RPC framework
@@ -121,7 +124,7 @@ Well, here are my thoughts on that.
 
 ### Caveats
 
-The [gRPC-Web](https://github.com/grpc/grpc-web) library is excellent for getting web-based applications communicating over gRPC, it does require additional infrastructure (namely a proxy that can translate HTTP/1.1 payloads into HTTP/2+ and back).
+The [gRPC-Web](https://github.com/grpc/grpc-web) library is excellent for getting web-based applications communicating over gRPC; however, it does require additional infrastructure (namely a proxy that can translate HTTP/1.1 payloads into HTTP/2+ and back).
 While the library is in active development, it does not (yet) support all gRPC features that make it stand out from other communication methods.
 At the time of this demo's inception (April 2024), gRPC-Web lacks support for:
 
