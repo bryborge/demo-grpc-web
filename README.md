@@ -1,4 +1,4 @@
-# Demo - gRPC Server + Web Client
+# Demo: gRPC Server + Web Client
 
 ![A screenshot of the web application saying "Hello, World" over gRPC](_assets/screenshot.png)
 
